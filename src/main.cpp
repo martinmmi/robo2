@@ -85,21 +85,15 @@ void myCallback(const std_msgs::Bool& msg) {
 
 ///////////////////////////////////////////////////////////////
 
-int readRosRobo() {
-  // Feed any data from ROS to ROBO.
-  if (Serial.available()) {
-    Serial.write(Serial.read());
-    int data = Serial.read();
-    return (int)data;
-  }
+/*
+void readRosRobo() {
+
 }
 
 void sendRoboRos() {
-  // Feed any data from ROBO to ROS
 
-  if (Serial.available())
-    Serial.write(Serial.read());
-  }
+}
+*/
 
 ///////////////////////////////////////////////////////////////
 
@@ -460,7 +454,7 @@ ros::Subscriber<std_msgs::UInt16> mode_subscriber("mode", &subscriberCallback);
 
 void setup() {
 
-  Serial.begin(9600);
+  Serial.begin(115200);
   //while (!Serial);
   Serial.println("");
   Serial.println("ROBO!");
@@ -493,6 +487,10 @@ void setup() {
 
   digitalWrite(ENA, HIGH); 
   digitalWrite(ENB, HIGH);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
 
   delay(1500);
 
