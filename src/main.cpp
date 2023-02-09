@@ -37,7 +37,7 @@ int i = 0;
 #define ENB       14            //Old 6
 #define IN1       12            //Old 7
 #define IN2       13            //Old 8
-#define IN3       15            //Old 9
+#define IN3        0            //Old 9
 #define IN4        2            //Old 11
 #define LT_R      !digitalRead(23)
 #define LT_M      !digitalRead(22)     //Old 4
