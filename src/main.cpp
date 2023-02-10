@@ -392,7 +392,7 @@ void lineFunction () {
 }
 
 ///////////////////////////////////////////////////////////////
-
+/*
 void buttonInterrupt() {
   buttonState = true;
   activeEyeSensor = false;
@@ -402,7 +402,7 @@ void buttonInterrupt() {
   delay(1000);
   digitalWrite(LED, LOW);
 }
-
+*/
 ///////////////////////////////////////////////////////////////
 
 void subscriberCallback(const std_msgs::UInt16& mode_msg) {
@@ -462,7 +462,7 @@ void setup() {
   pinMode(LED, OUTPUT);
   pinMode(BUTTON, INPUT_PULLDOWN);
 
-  attachInterrupt(digitalPinToInterrupt(BUTTON), buttonInterrupt, CHANGE);
+  //attachInterrupt(digitalPinToInterrupt(BUTTON), buttonInterrupt, CHANGE);
 
   myservo.attach(SEA,minAngle,maxAngle);
   myservo.write(90);
